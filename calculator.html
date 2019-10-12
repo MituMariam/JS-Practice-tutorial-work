@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+    
+    </head>
+<body>
+    <section class="calculator">
+        <form>
+         <input type="text" name="" id="" class="screen">
+         <!-- <textarea class="form-control" rows="5" id=""  class="screen" type="text" name=""></textarea> -->
+        </form>
+        <div class="buttons">
+         <!-- grey -->
+         <button type="button" class="btn btn-secondary" data-num="*">*</button>
+         <button type="button" class="btn btn-secondary" data-num="/">/</button>
+         <button type="button" class="btn btn-secondary" data-num="-">-</button>
+         <button type="button" class="btn btn-secondary" data-num="+">+</button>
+         <!-- dark buttons -->
+         <button type="button" class="btn btn-dark" data-num=".">.</button>
+         <button type="button" class="btn btn-dark" data-num="9">9</button>
+         <button type="button" class="btn btn-dark" data-num="8">8</button>
+         <button type="button" class="btn btn-dark" data-num="7">7</button>
+         <button type="button" class="btn btn-dark" data-num="6">6</button>
+         <button type="button" class="btn btn-dark" data-num="5">5</button>
+         <button type="button" class="btn btn-dark" data-num="4">4</button>
+         <button type="button" class="btn btn-dark" data-num="3">3</button>
+         <button type="button" class="btn btn-dark" data-num="2">2</button>
+         <button type="button" class="btn btn-dark" data-num="1">1</button>
+         <button type="button" class="btn btn-dark" data-num="0">0</button>
+         <button type="button" class="btn btn-equal btn-success">=</button>
+         <button type="button" class="btn btn-clear btn-danger">C</button>
+        </div>
+       </section>
+     <script>
+     //select all  elements
+     const screen = document.querySelector('.screen')
+     const btns = document.querySelectorAll('.btn')
+     const equal = document.querySelector('.btn-equal')
+     const clear = document.querySelector('.btn-clear')
+
+     //btn click event and show into screen
+     btns.forEach(function(btn){
+         btn.addEventListener('click', function(){
+             let number = btn.getAttribute('data-num')
+             screen.value += number;
+         })
+     })
+//evaluate  screen value
+equal.addEventListener('click', function(){
+    if(screen.value === ""){
+        screen.value = `please enter value`;
+    }else{
+        let gvalue = eval(screen.value)
+        screen.value = gvalue
+    }
+});
+
+clear.addEventListener('click', function(){
+
+        screen.value = "";
+
+});
+
+     </script> 
+      
+</body>
+</html>

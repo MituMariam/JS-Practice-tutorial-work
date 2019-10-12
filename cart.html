@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="cart-info" class="cart-info d-flex justify-content-end bg-dark text-white p-4">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p><span id="item-count">2</span> items - <span id="item-total">180</span> Tk</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!--Show Cart -->
+    <div class="cart"  id="cart">
+        <div class="cart-item d-flex justify-content-between my-5">
+            <img src="img-cart/food/1.jpg" alt="">
+            <div class="item-text">
+                <p id="cart-item-title">Item name</p>
+                <span>Tk <small id="cart-item-price">10.99</small></span>
+            </div>
+            <a href="#" id="item-remove"> <i class="fas fa-trash"></i></a>
+            </div>
+            
+            <div class="cart-total-container d-flex justify-content-around">
+                <h5>Total</h5>
+                <h5>Tk <strong id="cart-total" >180</strong></h5>
+            </div>
+            <div class="d-flex justify-content-around">
+                <a href="#" id="clear-cart" class="btn btn-outline-secondary">Clear Cart</a>
+                <a href="#" class="btn btn-outline-secondary btn-pink">Checkout</a>
+            </div>
+        
+    
+    </div>
+  
+    <div class="container">
+        <!--filter buttons -->
+        <div class="row">
+            <!-- <div class="col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap"> -->
+            <div class="col-lg-8 d-flex mx-auto justify-content-center flex-wrap sortBtn  my-2">
+                <a href="" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="all"> All</a>
+                <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="food">Foods</a>
+                <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="nature">Natures</a>
+            </div>
+
+        </div>
+
+        <!-- search -->
+        <div class="row">
+
+            <div class="col-10 mx-auto col-md-4">
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text search-box" id="search-icon"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder='item....' id="search-item">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!--end of filter buttons -->
+
+        <!-- store  items-->
+        <div class="row" id="store-items">
+            <!-- single item -->
+            <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item food" data-item="food">
+                <div class="card ">
+                    <div class="img-container">
+                        <img src="img/food/6.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon" id="add_to_cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">sweet item</h5>
+                            <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- end of card-->
+            </div>
+            <!--end of single store item-->
+            <!-- single item -->
+            <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item nature" data-item="nature">
+                <div class="card ">
+                    <div class="img-container">
+                        <img src="img/nature/1.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon" id="add_to_cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">nature item</h5>
+                            <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- end of card-->
+            </div>
+            <!--end of single store item-->
+            <!-- single item -->
+            <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item food" data-item="food">
+                <div class="card ">
+                    <div class="img-container">
+                        <img src="img/food/2.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon" id="add_to_cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">sweet item</h5>
+                            <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- end of card-->
+            </div>
+            <!--end of single store item-->
+            <!-- single item -->
+            <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item nature" data-item="nature">
+                <div class="card ">
+                    <div class="img-container">
+                        <img src="img/nature/3.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon" id="add_to_cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">nature item</h5>
+                            <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- end of card-->
+            </div>
+            <!--end of single store item-->
+            <!-- single item -->
+            <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item food" data-item="food">
+                <div class="card ">
+                    <div class="img-container">
+                        <img src="img/food/3.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon" id="add_to_cart">
+                            <i class="fas fa-shopping-cart"></i>
+                  </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">sweet item</h5>
+                            <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- end of card-->
+            </div>
+            <!--end of single store item-->
+            <!-- single item -->
+            <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item nature" data-item="nature">
+                <div class="card ">
+                    <div class="img-container">
+                        <img src="img/nature/5.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon" id="add_to_cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">nature item</h5>
+                            <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of card-->
+            </div>
+            <!--end of single store item-->
+        </div>
+    </div>
+
+    <!-- Modal Container-->
+    <div class="container-fluid">
+        <div class="row lightbox-container">
+            <div class="col-md-10 mx-auto lightbox-holder">
+                <span class="lightbox-close">x</span>
+                <div class="lightbox-item"></div>
+                <span class="lightbox-controller btnLeft"> < </span>
+                <span class="lightbox-controller btnRight"> > </span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    //--------    show cart---------
+        (function() {
+            const cartInfo = document.getElementById('cart-info');
+            const cart = document.getElementById('cart');
+            cartInfo.addEventListener('click', function() {
+                cart.classList.toggle("show-cart");
+            })
+        })();
+
+        //------add items to the cart-------
+
+        (function() {
+
+
+              //----add items to the cart
+            const cartBtn = document.querySelectorAll('.store-item-icon');
+            cartBtn.forEach(function(btn) {
+                btn.addEventListener('click', function(event) {
+                    // console.log(event.target)
+                    if (event.target.parentElement.classList.contains('store-item-icon')) {
+                        let fullPath = event.target.parentElement.previousElementSibling.src;
+                        let pos = fullPath.indexOf('img') + 3;
+                        let partPath = fullPath.slice(pos);
+                        // console.log(partPath);
+                        // console.log(fullPath);
+                        // console.log(pos);
+
+                        const item = {};
+                        item.img = `img-cart${partPath}`;
+                        let name = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
+                        item.name = name;
+                        let price = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
+                        let finalPrice = price.slice(1).trim();
+                        item.price = finalPrice;
+
+                        // console.log(finalPrice);
+                        // console.log(price);
+                        // console.log(name);
+                        // console.log(item);
+                        const cartItem = document.createElement('div');
+                        cartItem.classList.add('cart-item','d-flex','justify-content-between','my-5');
+                        cartItem.innerHTML = `
+                        <img src="${item.img}" alt="" id="item-img" class="rounded-circle">
+            <div class="item-text">
+                <p id="cart-item-title">${item.name}</p>
+                <span>Tk <small id="cart-item-price"> ${item.price}</small></span>
+            </div>
+            <a href="#" id="item-remove"> <i class="fas fa-trash"></i></a>
+          `;
+        const cart = document.querySelector('.cart');
+        const total = document.querySelector('.cart-total-container');
+        cart.insertBefore(cartItem, total);
+        alert('Item added to the cart!');
+        showTotals();
+                    };
+                });
+            });
+
+//---- show total
+
+function showTotals(){
+    const total = [];
+    const itemPrice = document.querySelectorAll('.cart-item-price');
+    itemPrice.forEach(function(item){
+        total.push(parseFloat(item.textContent));
+    });
+
+    const totalMoney = total.reduce(function(total,item){
+total += item;
+return total;
+    },0);
+    const finalMoney = totalMoney.toFixed(2);
+    // console.log(finalMoney);
+
+    document.getElementById('cart-total').textContent = finalMoney;
+    document.getElementById('item-total').textContent = finalMoney;
+    document.getElementById('item-count').textContent = total.length;
+    
+}
+
+
+
+        })();
+    </script>
+</body>
+
+</html>

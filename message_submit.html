@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <form action="" id="msg_form">
+        <input class="form-control" type="text" name="" id="input_msg">
+        <input type="submit" value="submit">
+        <h5 class="action_msg"></h5>
+        <h5 id="get_msg"></h5>
+    </form>
+    <!-- <h5 id="action_msg"></h5> -->
+   
+
+    <script>
+  
+  const actionMsg = document.querySelector('.action_msg');
+  const form = document.getElementById('msg_form');
+  form.addEventListener('submit',function(e){
+      e.preventDefault()
+
+      //getting value
+      const input_msg = document.getElementById('input_msg').value;
+      const getMsg = document.getElementById('get_msg');
+      getMsg.textContent = input_msg;
+      console.log(`msg is ${input_msg}`)
+
+      //check empty input
+    if(input_msg === ""){
+        actionMsg.classList.add('error');
+        actionMsg.textContent = `Empty field`;
+        setTimeout(function(){
+            actionMsg.classList.remove('error');
+        },5000)
+    }else{
+        actionMsg.classList.add('success');
+        actionMsg.textContent = `success field`;
+        setTimeout(function(){
+            actionMsg.classList.remove('success');
+        },5000)
+    }
+  })
+    </script>
+</body>
+</html>

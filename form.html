@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expression</title>
+</head>
+<body>
+  <h4>Form 1</h4>
+   <form action="" method="" name="formOne">
+       <table>
+           <tr>
+               <td><input type="text" name="text" value=""></td>
+               <td><input type="button" value="Click" name="button" onclick="testResult()"></td>
+           </tr>
+
+       </table>
+   </form><br>
+   <script>
+    
+    /*--- form 1--*/
+       function testResult(){
+           var testvar = formOne.text.value;
+           if(testvar == ""){
+              alert("Please type something....");
+              }else{
+                  alert("You type ... " + testvar); 
+              }
+       }
+    </script>
+    
+    
+     <h4>Form 2</h4>
+   <form action="" method="" name="formtwo">
+       <table>
+           <tr>
+               <td><input type="text" name="t1" onchange="docCal(this.form, this.name)"></td>
+           </tr>
+           <tr>
+               <td><input type="checkbox" name="chbox" onclick="docCal(this.form, this.name)"></td>
+           </tr>
+               <tr>
+               <td><input type="text" name="result" onchange="docCal(this.form, this.name)"></td>
+           </tr>
+             <tr>
+               <td><input type="reset" name="Refresh"></td>
+           </tr>
+
+       </table>
+   </form><br>
+    <script>
+     
+          /*--- form 2 --*/
+        function docCal(formtwo,pField){
+            
+           if(pField == "result"){
+               
+             if(formtwo.chbox.checked){
+                 
+                formtwo.t1.value = math.sqrt(formtwo.result.value);
+                 
+                }else{
+                    
+                   formtwo.t1.value = formtwo.result.value/2;
+                }
+               
+               
+               
+              } else{
+                  
+                 if(formtwo.chbox.checked){
+                     
+                     formtwo.result.value = formtwo.t1.value * formtwo.t1.value;
+                     
+                    } else{
+                        
+                        formtwo.result.value = formtwo.t1.value * 2;
+                    }
+              }
+        }
+        
+    </script>
+    
+    
+    
+    
+        <h4>Form 3</h4>
+   <form action="" method="" name="formthree" onsubmit="testCode()">
+       <table>
+           <tr>
+               <td>Selected:</td>
+               <td>
+               <input type="radio" name="rbox" value="JS">JS <br>
+               <input type="radio" name="rbox" value="PHP">PHP <br>
+               <input type="radio" name="rbox" value="HTML">HTML <br>
+               <input type="radio" name="rbox" value="CSS">CSS <br>
+               
+               </td>
+           </tr>
+           
+             <tr>
+               <td>
+               <input type="submit" value="Submit">
+               <input type="reset" value="Reset">
+               
+               </td>
+           </tr>
+
+       </table>
+   </form><br>
+   <script>
+     
+          /*--- form 3 --*/
+        function testCode(){
+            document.write("you selected: " +selectedCode());
+
+        }
+            
+          function selectedCode(){
+            for(i=0;i<=3;i++){
+              var getchecked = document.formthree.rbox[i];
+                if(getchecked.checked){
+                    return getchecked.value;
+                }
+            }  
+          }
+        
+    </script>
+    
+    
+    
+    
+        <h4>Form 4</h4>
+   <form action="" method="" name="formthree" onsubmit="testCode()">
+       <table>
+           <tr>
+               <td>Name</td>
+               <td><input type="text" name="name"></td>
+           </tr>
+            <tr>
+               <td>Email</td>
+               <td><input type="text" name="email"></td>
+           </tr>
+            <tr>
+               <td>Contact</td>
+               <td><input type="text" name="contact"></td>
+           </tr>
+             <tr>
+              
+               <td><input type="checkbox" name="notcall" onclick="">Please do not call me</td>
+           </tr>
+           
+             <tr>
+               <td>
+               <input type="submit" value="Submit">
+               <input type="reset" value="Reset">
+               
+               </td>
+           </tr>
+
+       </table>
+   </form><br>
+   <script>
+     
+          /*--- form 3 --*/
+        function testCode(){
+            document.write("you selected: " +selectedCode());
+
+        }
+            
+          function selectedCode(){
+            for(i=0;i<=3;i++){
+              var getchecked = document.formthree.rbox[i];
+                if(getchecked.checked){
+                    return getchecked.value;
+                }
+            }  
+          }
+        
+    </script>
+    
+</body>
+</html>

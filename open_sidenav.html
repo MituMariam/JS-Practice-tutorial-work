@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+        nav#mynav{
+            position: fixed;
+            top: 0;
+/*            left: -250px;*/
+            height: 100%;
+            width: 250px;
+            background: #333;
+            color: #fff;
+            z-index: 99;
+            transition: .5s;
+        }
+        #openNav {
+	position: absolute;
+	/* z-index: -1; */
+	top: 10px;
+	left: 260px;
+	background: #333;
+	padding: 10px 16px;
+}
+        #closeNav{
+        position: absolute;
+	/* z-index: -1; */
+	top: 10px;
+	left: 260px;
+	background: #333;
+	padding: 10px 16px;
+        }
+        nav#mynav ul{
+            margin: 0;
+            padding: 0;
+        }
+        nav#mynav ul li{
+            list-style: none;
+        }
+        nav#mynav ul li a{
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            background: #222;
+            color: #fff;
+            border-bottom: 1px solid #111;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <nav id="mynav">
+        <div id="openNav"><i class="fas fa-angle-right"></i></div>
+        <div id="closeNav"><i class="fas fa-angle-left"></i></div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Service</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit, laborum voluptates eligendi voluptas voluptatibus animi facere quos, saepe est ipsam odit perferendis cupiditate, suscipit recusandae sapiente magni necessitatibus. Doloribus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit, laborum voluptates eligendi voluptas voluptatibus animi facere quos, saepe est ipsam odit perferendis cupiditate, suscipit recusandae sapiente magni necessitatibus. Doloribus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit, laborum voluptates eligendi voluptas voluptatibus animi facere quos, saepe est ipsam odit perferendis cupiditate, suscipit recusandae sapiente magni necessitatibus. Doloribus.</p>
+    </main>
+    
+    <script>
+    var nav = document.getElementById('mynav');
+    var open = document.getElementById('openNav');
+    var close = document.getElementById('closeNav');
+    var main = document.getElementById('main');
+       
+        open.addEventListener('click', function(){
+            nav.style.left = '0px';
+            main.style.marginLeft = "250px";
+            open.style.display='none';
+            close.style.display='block';
+           
+        })
+        close.addEventListener('click', function(){
+            nav.style.left = '-250px';
+            main.style.marginLeft = "0px";
+            close.style.display='none';
+            open.style.display='block';
+        })
+    </script>
+</body>
+</html>

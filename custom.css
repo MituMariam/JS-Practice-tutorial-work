@@ -1,0 +1,349 @@
+/*** 
+
+====================================================================
+	Global Settings
+====================================================================
+
+ ***/
+
+
+body{
+   font-family: 'Open Sans', sans-serif !important;
+   color: #333; 
+    font-size: 14px;
+  font-weight: 400;
+    background: #ddd;
+ 
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+    text-transform: capitalize
+}
+li{
+    list-style: none;
+}
+
+a:hover {
+  color: #00b0ff;
+  text-decoration: none !important;
+  outline: 0;
+}
+
+/***
+
+==================================================================
+				Global CSS
+==================================================================
+
+***/
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+  nav#mynav{
+            position: fixed;
+            top: 0;
+/*            left: -250px;*/
+            height: 100%;
+            width: 250px;
+      background: #103142;
+            color: #fff;
+            z-index: 99;
+            transition: .5s;
+        }
+        #openNav {
+	position: absolute;
+	/* z-index: -1; */
+	top: 10px;
+	left: 260px;
+	background: #333;
+	padding: 10px 16px;
+}
+        #closeNav{
+        position: absolute;
+	/* z-index: -1; */
+	top: 10px;
+	left: 260px;
+	background: #333;
+	padding: 10px 16px;
+        }
+        nav#mynav ul{
+            margin: 0;
+            padding: 0;
+        }
+        nav#mynav ul li{
+            list-style: none;
+        }
+        nav#mynav ul li a{
+            text-decoration: none;
+            display: block;
+/*
+            padding: 10px 20px;
+            background: #222;
+*/
+            color: #fff;
+/*            border-bottom: 1px solid #111;*/
+        }
+
+/*	logo
+ -------------------------------------------------- */
+.s_logo {
+	position: relative;
+	left: 0;
+	right: 0;
+	text-align: center;
+	/* margin: 35px 0; */
+	margin-top: 40px;
+}
+.s_logo img {
+	width: 155px;
+}
+
+
+/*	profile info
+ -------------------------------------------------- */
+.profile_info {
+	margin: 40px 0px;
+}
+.profile_info .pro_img_holder {
+	/* text-align: center; */
+	position: relative;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+.profile_info .pro_img_holder img{
+    width:80px;
+    height: 80px;
+    border-radius: 100%;
+    margin: 0 auto;
+}
+.profile_info .pro_text_holder h4 span img {
+	width: 18px;
+	height: 17px;
+	margin-left: 5px;
+}
+.profile_info .progress {
+	height: 8px;
+	max-width: 170px;
+	margin: 0 auto;
+	position: relative;
+	overflow: inherit;
+	background-color: #ddd;
+	margin-top: 25px;
+}
+.profile_info .progress .progress-bar{
+    position: relative;
+    background-color: #fff;
+}
+.profile_info .progress .progress-bar span {
+	position: absolute;
+	top: -16px;
+	right: -57px;
+	color: #fff;
+	z-index: 1;
+}
+
+/*	sidebar area
+ -------------------------------------------------- */
+
+.sidebar_menu {
+	margin-top: 55px;
+	padding: 50px 0;
+	border-top: 1px solid #959292;
+/*
+	height: 560px;
+	overflow-y: scroll;
+*/
+}
+.sidebar_menu  ul{
+    padding: 0;
+}
+.sidebar_menu ul li {
+	position: relative;
+	overflow: hidden;
+	margin: 10px 0;
+}
+.sidebar_menu  ul li:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    background: #fff;
+    top: 0;
+    width: 4px;
+    height: 0%;
+    z-index: -1;
+}
+.sidebar_menu ul li:hover::before {
+	z-index: 1;
+	height: 100%;
+}
+
+.sidebar_menu ul li a {
+	text-transform: capitalize;
+	color: #fff;
+	padding: 12px 0;
+	display: inline-flex;
+	/* margin-left: 98px; */
+	position: relative;
+	left: 25%;
+	/* width: 100%; */
+}
+.sidebar_menu ul li a span{
+	margin-right: 10px;
+}
+.sidebar_menu .corporate-menu li a span{
+	margin-right: 10px;
+	margin-left: -30px;
+}
+.sidebar_menu ul li a span img{
+    width: 20px;
+}
+.wrapper .main_sidebar{
+/*position: relative;*/
+}
+
+/*	Notification area
+ -------------------------------------------------- */
+
+.notify_area {
+	position: absolute;
+	bottom: 0;
+	padding: 15px 10px;
+	width: 100%;
+    border-top: 1px solid #959292;
+}
+.notify_box {
+	position: absolute;
+	width: 100%;
+	min-height: 400px;
+	bottom: 55px;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+}
+
+.notify_area ul{
+    padding: 0;
+}
+.notify_area ul li{
+color: #333;
+}
+.notify_area ul li a{
+color: #fff;
+}
+.notify_area ul li a span{
+    margin-right: 10px;
+}
+
+
+.notify_area ul li .notification span {
+	bottom: 15px;
+	position: fixed;
+	left: 10px;
+}
+.current_notify{
+    background: #fff;
+}
+.current_notify .notify_heading{
+   color: #333; 
+}
+.current_notify ul li p{
+    font-size: 12px;
+}
+
+
+.current{
+	position: absolute;
+	width: 100%;
+	min-height: 400px;
+	bottom: 55px;
+	left: 0;
+    display: block !important;
+    z-index: 5;
+    padding: 5px 10px;
+    
+/*	background:#fff;*/
+}
+
+/*
+.current:active .current_notify{
+display: block;
+display: block;
+}
+*/
+
+.current_notify.current{
+  display: block;  
+}
+.notify_area  .current_notify{
+    display: none;
+}
+/*	Main Content area
+ -------------------------------------------------- */
+
+.page_title {
+	background: #fff;
+	padding: 10px 45px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.page_title h1 {
+	margin: 0;
+	font-size: 30px;	
+}
+.page_title h1 span{
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+/***
+
+==================================================================
+				Responsive CSS
+==================================================================
+
+***/
+
+
+
+
+
+@media (min-width: 320px) and (max-width:480px) {
+
+
+}
+@media only screen and (max-width:480px) {
+  
+
+  
+}
+@media only screen and (max-width:226x) {
+  
+/*
+    
+  .wrapper .main_sidebar {
+	width: 70%;
+}
+    .wrapper .main_content {
+	width:30%;
+
+}
+*/
+
+}
+
+
+
+

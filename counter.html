@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="counter_box">
+        <h1 class="text-uppercase">counter</h1>
+        <h2 id='counter'>0</h2>
+        <div class="button-group">
+            <button class="counterbtn  prevBtn">lower count</button>
+            <button class="counterbtn nextBtn">add count</button>
+        </div>
+         
+    </div>
+   
+
+    <script>
+  
+  let counterValue = 0;
+const buttons = document.querySelectorAll('.counterbtn');
+const counter = document.getElementById('counter');
+
+
+buttons.forEach(function(btn){
+  btn.addEventListener('click',function(event){
+      
+      
+    const value = event.target;//elements that we click
+    console.log(value);
+      
+      
+      if(value.classList.contains("prevBtn")){
+         counterValue--;
+         }else if(value.classList.contains("nextBtn")){
+           counterValue++;        
+        }
+      counter.textContent = counterValue;
+      
+      
+      //change color
+      if(counterValue===0){
+           counter.style.color = "#333";
+      }
+      else if(counterValue < 0){
+          counter.style.color = "red";
+      } else if(counterValue > 0){
+            counter.style.color = "green";
+      }
+      
+      
+});  
+});
+    </script>
+</body>
+</html>

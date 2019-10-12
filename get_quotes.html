@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+  <body>
+
+<div class="container">
+    <div class="row max-height align-items-center text-center">
+        <div class="col">
+         <div class="quote_wrapper">
+           <button class="text-capitalize" id="generate_btn">generate quote</button>
+            <div id="quote_text" class="text-center">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur vitae porro est doloribus minus quam, natus iusto sint quasi beatae aut quibusdam incidunt commodi inventore debitis corrupti iste, sunt ut.</p>
+            </div>
+            <h5 class="text-right"><span>-</span> <span  id="author" >Author Name</span> </h5>
+         </div>
+        </div>
+    </div>
+</div>
+    
+        <!-- Optional JavaScript -->
+
+        <script>
+          //
+          const quotes =[
+          {
+        name:'Abraham Linkon',
+        text:'I’m a success today because I had a friend who believed in me and I didn’t have the heart to let him down.'
+    },
+    {
+        name:'Mother Teresa',
+        text:'Let us always meet each other with smile, for the smile is the beginning of love.'
+    },
+    {
+        name:'Francis Chan',
+        text:'Our greatest fear should not be of failure… but of succeeding at things in life that don’t really matter.'
+    },
+    {
+        name:'Pablo Picasso',
+        text:'Only put off until tomorrow what you are willing to die having left undone.'
+    },
+    {
+        name:'Albert Einstein',
+        text:'If you want to live a happy life, tie it to a goal, not to people or things.'
+    },
+    {
+        name:'Steve Jobs',
+        text:'Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.'
+    }
+          ]
+        
+        const quote_text = document.getElementById('quote_text')
+        const author = document.getElementById('author')
+        const btn = document.getElementById('generate_btn');
+        btn.addEventListener('click',showQuote);
+        function showQuote(){
+          let quote_numbers = Math.floor(Math.random() * quotes.length);
+          quote_text.textContent = quotes[quote_numbers].text
+          author.textContent = quotes[quote_numbers].name
+          console.log(quote_numbers)
+        }
+        
+        </script>
+  </body>
+</html>

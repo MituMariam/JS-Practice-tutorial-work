@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    
+
+</head>
+  <body>
+
+    <div class="container todo_area">
+      <div class="row">
+       <div class="col mx-auto col-md-8 mt-3 text-center">
+        <div class="alert text-capitalize feedback">
+         write value for item
+        </div>
+        <!-- form -->
+        <form id="itemForm" class="my-3">
+         <h3 class="text-capitalize mb-4">to do list</h3>
+         <div class="input-group">
+          <input type="text" class="form-control text-capitalize" id="itemInput" placeholder="name...">
+          <div class="input-group-append">
+           <button class="btn btn-dark text-capitalize" type="submit">add item</button>
+          </div>
+         </div>
+        </form>
+        <div class="item-container">
+         <!-- end of form  -->
+         <div class="item-list my-5">
+          <!-- single item -->
+          <!-- <div class="item my-3">
+          <h5 class="item-name text-capitalize">laundry</h5>
+          <div class="item-icons">
+           <a href="#" class="complete-item mx-2 item-icon"><i class="far fa-check-circle"></i></a>
+           <a href="#" class="edit-item mx-2 item-icon"><i class="far fa-edit"></i></a>
+           <a href="#" class="delete-item item-icon"><i class="far fa-times-circle"></i></a>
+          </div>
+         </div> -->
+          <!-- end of single item -->
+         </div>
+         <button type="button" class="btn btn-dark my-3 text-capitalize" id="clear-list">clear items</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    
+        <!-- Optional JavaScript -->
+
+        <script>
+          //get elements by variable
+          //get input value by submit
+          //give condition with function
+          //execute condition function
+
+
+
+          //get elements
+          const form = document.getElementById('itemForm')
+          const input = document.getElementById('itemInput')
+          const showItem = document.querySelector('.item-list')
+          const clearItem = document.getElementById('clear-list')
+          const feedback = document.querySelector('.feedback')
+          let itemData = [];
+
+          form.addEventListener('submit',function(event){
+            event.preventDefault();
+            //get input value
+            const inputValue = input.value;
+            console.log(inputValue);
+
+            //conditions------
+            if(inputValue === ""){
+              //show feedback function
+              showFeedback("please enter a value","danger")
+            }else{
+              //add item function
+              addItem(inputValue)
+
+              //add to item array
+              itemData.push(inputValue)
+              // console.log(itemData);
+              //local storage
+             
+              //add event listener to icon
+              handleItem(inputValue) 
+            }
+          })
+
+          //showFeedback function
+          function showFeedback(text,action){
+            feedback.classList.add("showText",`alert-${action}`);
+            feedback.innerHTML = `<p>${text}</p>`;
+            setTimeout(function(){
+              feedback.classList.remove("showText",`alert-${action}`);
+             },5000)
+          }
+           //add items function
+           function addItem(value){
+             const div = document.createElement('div')
+             div.classList.add('item', 'my-3','d-flex','justify-content-between')
+             div.innerHTML = ` <h5 class="item-name text-capitalize">${value}</h5>
+          <div class="item-icons">
+           <a href="#" class="complete-item mx-2 item-icon text-success"><i class="far fa-check-circle"></i></a>
+           <a href="#" class="edit-item mx-2 item-icon text-primary"><i class="far fa-edit"></i></a>
+           <a href="#" class="delete-item item-icon text-danger"><i class="far fa-times-circle"></i></a>
+          </div> `;
+          showItem.appendChild(div);
+
+           //remove  items
+           clearItem.addEventListener('click', function(){
+            showItem.removeChild(div)
+           })
+
+           }
+         
+           //handle items function
+
+           function handleItem(inputValue) {
+           
+          }
+          
+
+        </script>
+  </body>
+</html>

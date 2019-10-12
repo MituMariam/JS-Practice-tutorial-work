@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .slider {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider .slider-item {}
+
+        .slider .slider-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .slider .slider-left,
+        .slider .slider-right {
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            color: #333;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+        }
+
+        .slider .slider-left {
+            left: 0;
+        }
+
+        .slider .slider-right {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <div class="slider-item">
+            <img src="img/1.jpg" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="img/3.jpg" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="img/1.jpg" alt="">
+        </div>
+        <div class="slider-left"><i class="fas fa-angle-left"></i></div>
+        <div class="slider-right"><i class="fas fa-angle-right"></i></div>
+    </div>
+
+
+    <script>
+        var slideItem = document.querySelectorAll('.slider-item');
+        var slideLeft = document.querySelector('.slider-left');
+        var slideRight = document.querySelector('.slider-right');
+
+
+        var current = 0;
+
+        function reset(){
+            for (let i = 0; i < slideItem.length; i++) {
+                slideItem[i].style.display = 'none';
+            }
+        }
+
+        function startSlide() {
+            reset();
+            slideItem[0].style.display = 'block';
+        }
+
+        startSlide();
+
+        function leftSlide() {
+            reset();
+            slideItem[current - 1].style.display = 'block';
+            current--;
+        }
+
+        function rightSlide() {
+            reset();
+            slideItem[current + 1].style.display = 'block';
+            current++;
+        }
+        slideLeft.addEventListener('click', function() {
+            if(current === 0){
+               current = slideItem.length;
+               }
+            leftSlide();
+            
+        })
+         slideRight.addEventListener('click', function() {
+             if(current === slideItem.length - 1){
+               current = -1;
+               }
+            rightSlide();
+        })
+    </script>
+</body>
+
+</html>

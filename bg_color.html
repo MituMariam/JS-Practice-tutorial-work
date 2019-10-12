@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+  <body>
+
+<div class="container">
+    <div class="row max-height align-items-center text-center">
+        <div class="col">
+           <button id="btn" class="btn btn-outline-secondary"> Click me</button>
+           
+        </div>
+    </div>
+</div>
+    
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+        <!-- Optional JavaScript -->
+
+        <script>
+        const colors = ['#258874','#7B1E7A','#FFBC42','#2C365E','#832E48']
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(){
+            let random =Math.floor(Math.random()*colors.length);
+            const body = document.body;
+            body.style.backgroundColor= colors[random]
+            console.log(random);
+        })
+        </script>
+  </body>
+</html>

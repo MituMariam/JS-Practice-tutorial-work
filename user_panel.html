@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <style>
+       
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+
+      
+       
+    </style>
+</head>
+<body>
+    
+    <nav id="mynav">
+        <div id="openNav"><i class="fas fa-th-large"></i></div>
+        <div id="closeNav"><i class="fas fa-th-large"></i></div>
+            
+            
+             <div class="s_logo">
+                    <img src="assets/images/logo.png" alt="">
+                </div>
+                <!-- Profile Info -->
+                <div class="profile_info">
+                    <div class="pro_img_holder">
+                        <img src="assets/images/pro.jpg" alt="">
+                        <div class="pro_text_holder text_center">
+                            <h4>Md Nishad Ahmed<span><img src="assets/images/cvlinked-verified-sign.png" alt=""></span></h4>
+                            <p>Job Seeker</p>
+<!--                            <i class="fas fa-check"></i>-->
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                <span> 70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             <!-- Sidebar Menu -->
+            <div class="sidebar_menu">
+                    <ul>
+                        <li><a href=""><span><i class="fas fa-th-large"></i></span>dashboard</a></li>
+                        <li><a href=""><span> <i class="fas fa-calendar-week"></i></span>view cv</a></li>
+                        <li><a href=""><span><i class="fas fa-edit"></i></span>edit cv</a></li>
+                        <li><a href=""><span><i class="fab fa-youtube"></i></span>job tutorial</a></li>
+                        <li><a href=""><span><i class="fas fa-sign-out-alt"></i></span>CVlinked Blog</a></li>
+                    </ul>
+                </div>
+    </nav>
+    <main id="main">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit, laborum voluptates eligendi voluptas voluptatibus animi facere quos, saepe est ipsam odit perferendis cupiditate, suscipit recusandae sapiente magni necessitatibus. Doloribus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit, laborum voluptates eligendi voluptas voluptatibus animi facere quos, saepe est ipsam odit perferendis cupiditate, suscipit recusandae sapiente magni necessitatibus. Doloribus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sit, laborum voluptates eligendi voluptas voluptatibus animi facere quos, saepe est ipsam odit perferendis cupiditate, suscipit recusandae sapiente magni necessitatibus. Doloribus.</p>
+    </main>
+    
+    <script>
+    var nav = document.getElementById('mynav');
+    var open = document.getElementById('openNav');
+    var close = document.getElementById('closeNav');
+    var main = document.getElementById('main');
+       
+        open.addEventListener('click', function(){
+            nav.style.left = '0px';
+            main.style.marginLeft = "250px";
+            open.style.display='none';
+            close.style.display='block';
+           
+        })
+        close.addEventListener('click', function(){
+            nav.style.left = '-250px';
+            main.style.marginLeft = "0px";
+            close.style.display='none';
+            open.style.display='block';
+        })
+    </script>
+</body>
+</html>

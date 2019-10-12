@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .tabs-cover {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tab-btn {
+            display: inline-block;
+            padding: 15px 20px;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .tab-content {
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            background: #3498db;
+            font-size: 40px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabs-cover">
+        <ul>
+            <li class="tab-btn">Button 01</li>
+            <li class="tab-btn">Button 02</li>
+            <li class="tab-btn">Button 03</li>
+        </ul>
+        <div class="tabs">
+            <div class="tab-content">Tab01</div>
+            <div class="tab-content">Tab02</div>
+            <div class="tab-content">Tab03</div>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.querySelectorAll('.tab-btn');
+        var tab = document.querySelectorAll('.tab-content');
+
+        function reset() {
+            for (let i = 0; i < tab.length; i++) {
+                tab[i].style.display = "none";
+                btn[i].style.backgroundColor = "#333";
+            }
+        }
+
+        function tabOne(){
+            reset();
+            tab[0].style.display = "block";
+            btn[0].style.backgroundColor = "#3498db";
+
+        }
+        tabOne();
+
+        for (let j = 0; j < btn.length; j++) {
+            btn[j].addEventListener('click', function() {
+                reset();
+                tab[j].style.display = 'block';
+                btn[j].style.backgroundColor = "#3498db";
+            });
+        }
+    </script>
+</body>
+
+</html>

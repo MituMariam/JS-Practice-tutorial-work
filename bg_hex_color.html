@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+  <body>
+
+<div class="container">
+    <div class="row max-height align-items-center text-center">
+        <div class="col">
+          <h3 id="color_value">Hex Colors:</h3>
+           <button id="btn" class="btn btn-outline-secondary"> Click me</button>
+           
+        </div>
+    </div>
+</div>
+    
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+        <!-- Optional JavaScript -->
+
+        <script>
+          //
+          //create hex values
+          // (function(){})()
+        const color_value = document.getElementById('color_value')
+        const btn = document.getElementById('btn');
+        
+        btn.addEventListener('click',function(){
+          let hex_value = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+          let hex_color = '#'
+           for(i=0; i < 6; i++){
+            let random = Math.floor(Math.random()*hex_value.length);
+            hex_color += hex_value[random];
+            console.log(random);
+           }
+           document.body.style.backgroundColor = hex_color;
+          hex_value.textContent = hex_color;
+
+           console.log(hex_color);
+        })
+       
+        </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .img-cover {
+            width: 400px;
+            cursor: pointer;
+            display: inline-flex;
+        }
+
+        .img-cover .main-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #display-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        #display-modal .modal-img {
+            position: absolute;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #display-modal .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 50px;
+            width: 50px;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            font-size: 25px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="img-cover">
+        <img src="img/1.jpg" alt="" class="main-img">
+    </div>
+    <div class="img-cover">
+        <img src="img/2.jpg" alt="" class="main-img">
+    </div>
+    <div class="img-cover">
+        <img src="img/3.jpg" alt="" class="main-img">
+    </div>
+    <div id="display-modal">
+        <div class="close">x</div>
+        <img src="img/1.jpg" alt="" class="modal-img">
+    </div>
+
+    <script>
+        var mainImg = document.querySelectorAll('.main-img');
+        var modalImg = document.querySelector('.modal-img');
+        var close = document.querySelector('.close');
+        
+        for(let i=0; i < mainImg.length; i++){
+            mainImg[i].addEventListener('click', function(){
+                document.getElementById('display-modal').style.display= 'block';
+                modalImg.src = mainImg[i].src; 
+            })
+        }
+          close.addEventListener('click', function(){
+            document.getElementById('display-modal').style.display= 'none';
+        });
+        
+        
+        
+    </script>
+</body>
+
+</html>
